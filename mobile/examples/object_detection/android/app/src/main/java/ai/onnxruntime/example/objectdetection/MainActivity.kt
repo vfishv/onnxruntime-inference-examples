@@ -17,7 +17,6 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.*
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 import java.io.InputStream
 import java.util.*
