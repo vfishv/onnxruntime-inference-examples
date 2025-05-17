@@ -62,24 +62,22 @@ class OnnxModelInspector(private val context: Context) {
             }
 
             // 5. 获取并打印输入节点信息
-            Log.i(TAG, "--- Input Nodes (Count: ${session.inputCount}) ---")
+            Log.i(TAG, "--- Input Nodes (numInputs: ${session.numInputs}) ---")
             session.inputNames.forEach { name ->
                 val inputInfo = session.getInputInfo()[name]
                 inputInfo?.let {
                     Log.i(TAG, "Input Node Name: ${it.name}")
-                    Log.i(TAG, "  Type: ${it.info.type}")
-                    Log.i(TAG, "  Shape: ${it.info.shape.contentToString()}") // For arrays
+                    Log.i(TAG, "  info: ${it.info}")
                 }
             }
 
             // 6. 获取并打印输出节点信息
-            Log.i(TAG, "--- Output Nodes (Count: ${session.outputCount}) ---")
+            Log.i(TAG, "--- Output Nodes (numOutputs: ${session.numOutputs}) ---")
             session.outputNames.forEach { name ->
                 val outputInfo = session.getOutputInfo()[name]
                 outputInfo?.let {
                     Log.i(TAG, "Output Node Name: ${it.name}")
-                    Log.i(TAG, "  Type: ${it.info.type}")
-                    Log.i(TAG, "  Shape: ${it.info.shape.contentToString()}")
+                    Log.i(TAG, "  info: ${it.info}")
                 }
             }
 
